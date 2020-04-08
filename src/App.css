@@ -1,18 +1,14 @@
 * {
   box-sizing: border-box;
+  position: relative;
 }
 
 html,
 body,
-#root {
+#root,
+.app {
   height: 100%;
   width: 100%;
-}
-
-#root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .app {
@@ -20,4 +16,33 @@ body,
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.app[data-state='shimmer'] h1,
+.app[data-state='shimmer'] h2 {
+  color: transparent;
+}
+
+.app[data-state='shimmer'] h1:before,
+.app[data-state='shimmer'] h2:before {
+  content: 'hmm';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: shimmer 1s ease-in-out infinite;
+  border-radius: 0.25rem;
+}
+
+.app[data-state='shimmer'] .loader {
+  display: none;
+}
+
+@keyframes shimmer {
+  from,
+  to {
+    background-color: #ededed;
+  }
+  50% {
+    background-color: #dedede;
+  }
 }
