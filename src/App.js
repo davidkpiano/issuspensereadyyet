@@ -35,7 +35,13 @@ function App() {
 
   return (
     <div className="app" data-state={state.toStrings().join(' ')}>
-      <h1>Is suspense ready yet?</h1>
+      <h1>
+        Is{' '}
+        <a href="https://reactjs.org/docs/concurrent-mode-suspense.html">
+          Suspense
+        </a>{' '}
+        Ready Yet?
+      </h1>
       <h2>
         Answer: <Loader />
       </h2>
