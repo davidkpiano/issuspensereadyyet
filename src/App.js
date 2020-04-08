@@ -9,7 +9,7 @@ const loadingMachine = createMachine({
   states: {
     loading: {
       after: {
-        2000: 'shimmer',
+        4000: 'shimmer',
       },
     },
     shimmer: {
@@ -19,7 +19,7 @@ const loadingMachine = createMachine({
     },
     ready: {
       after: {
-        5000: 'docs',
+        7000: 'docs',
       },
     },
     docs: {},
